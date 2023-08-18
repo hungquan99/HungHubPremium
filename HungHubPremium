@@ -26,6 +26,14 @@ local Window = Rayfield:CreateWindow({
     }
  })
 
+ if game.PlaceId == 2753915549 then
+    World1 = true
+elseif game.PlaceId == 4442272183 then
+    World2 = true
+elseif game.PlaceId == 7449423635 then
+    World3 = true
+end
+
  local MainTab = Window:CreateTab("Main", 4483362458)
  local MainSection = MainTab:CreateSection("Auto Mode")
 
@@ -34,14 +42,6 @@ local Window = Rayfield:CreateWindow({
     CurrentValue = false,
     Flag = "Auto Farm", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
     Callback = function(Value)
-        if game.PlaceId == 2753915549 then
-            World1 = true
-        elseif game.PlaceId == 4442272183 then
-            World2 = true
-        elseif game.PlaceId == 7449423635 then
-            World3 = true
-        end
-        
         function CheckQuest() 
             MyLevel = game:GetService("Players").LocalPlayer.Data.Level.Value
             if World1 then
